@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
 
-    <link rel="icon" href="/assets/images/Bookshelf Icon.png" />
+    <link rel="icon" href="assets/images/Bookshelf Icon.png" />
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
@@ -134,7 +134,7 @@
         <h1 class="tituloproximo">Próximo lançamento</h1>
         <h2 class="titulolivro">Nunca Deixe de Tentar <br /></h2>
         <h3 class="autorlivro">Livro por Michael Jordan</h3>
-        <img src="/assets/images/michael.png" alt="Livro de Michael Jordan" />
+        <img src="assets/images/michael.png" alt="Livro de Michael Jordan" />
         <p id="countdown-timer" class="countdown-timer"></p>
       </div>
     </div>
@@ -144,9 +144,9 @@
       setTimeout(function () {
         document.getElementById("welcome-message").style.display = "none";
         document.getElementById("home").style.display = "block";
-        document.getElementById("header").style.display = "block"; // Exibe o header após 3 segundos
+        document.getElementById("header").style.display = "block"; 
         showDateTime();
-        startCountdown(); // Iniciar contagem apenas após exibir a página
+        startCountdown(); 
       }, 3000);
 
       // Função para mostrar a data e hora atual

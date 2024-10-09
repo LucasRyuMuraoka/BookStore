@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
 
-    <link rel="icon" href="/assets/images/Bookshelf Icon.png" />
+    <link rel="icon" href="assets/images/Bookshelf Icon.png" />
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
@@ -109,119 +109,119 @@
             autor: "J.K. Rowling",
             preco: 39.9,
             genero: "Fantasia",
-            imagem: "/assets/images/harry.png",
+            imagem: "assets/images/harry.png",
           },
           {
             titulo: "Diário de um Banana",
             autor: "Jeff Kinney",
             preco: 29.9,
             genero: "Infantil",
-            imagem: "/assets/images/banana.png",
+            imagem: "assets/images/banana.png",
           },
           {
             titulo: "1808",
             autor: "Laurentino Gomes",
             preco: 49.9,
             genero: "História",
-            imagem: "/assets/images/1808.png",
+            imagem: "assets/images/1808.png",
           },
           {
             titulo: "O Pequeno Príncipe",
             autor: "Antoine de Saint-Exupéry",
             preco: 34.9,
             genero: "Ficção",
-            imagem: "/assets/images/principe.png",
+            imagem: "assets/images/principe.png",
           },
           {
             titulo: "O Senhor dos Anéis",
             autor: "J.R.R. Tolkien",
             preco: 89.9,
             genero: "Fantasia",
-            imagem: "/assets/images/aneis.png",
+            imagem: "assets/images/aneis.png",
           },
           {
             titulo: "Orgulho e Preconceito",
             autor: "Jane Austen",
             preco: 39.9,
             genero: "Romance",
-            imagem: "/assets/images/orgulho.png",
+            imagem: "assets/images/orgulho.png",
           },
           {
             titulo: "Dom Quixote",
             autor: "Miguel de Cervantes",
             preco: 45.0,
             genero: "Clássico",
-            imagem: "/assets/images/domquixote.png",
+            imagem: "assets/images/domquixote.png",
           },
           {
             titulo: "MARVEL",
             autor: "Vários Autores",
             preco: 59.9,
             genero: "Quadrinhos",
-            imagem: "/assets/images/marvel.png",
+            imagem: "assets/images/marvel.png",
           },
           {
             titulo: "A Sutil Arte de Ligar o F*da-se",
             autor: "Mark Manson",
             preco: 39.9,
             genero: "Autoajuda",
-            imagem: "/assets/images/asutilarte.png",
+            imagem: "assets/images/asutilarte.png",
           },
           {
             titulo: "O Livro dos Cinco Anéis",
             autor: "Miyamoto Musashi",
             preco: 34.9,
             genero: "Filosofia",
-            imagem: "/assets/images/cincoaneis.png",
+            imagem: "assets/images/cincoaneis.png",
           },
           {
             titulo: "O Alquimista",
             autor: "Paulo Coelho",
             preco: 29.9,
             genero: "Ficção",
-            imagem: "/assets/images/alquimista.png",
+            imagem: "assets/images/alquimista.png",
           },
           {
             titulo: "Cem Anos de Solidão",
             autor: "Gabriel García Márquez",
             preco: 49.9,
             genero: "Ficção",
-            imagem: "/assets/images/solidao.png",
+            imagem: "assets/images/solidao.png",
           },
           {
             titulo: "A Revolução dos Bichos",
             autor: "George Orwell",
             preco: 24.9,
             genero: "Ficção",
-            imagem: "/assets/images/bichos.png",
+            imagem: "assets/images/bichos.png",
           },
           {
             titulo: "O Poder do Hábito",
             autor: "Charles Duhigg",
             preco: 44.9,
             genero: "Autoajuda",
-            imagem: "/assets/images/poderdohabito.png",
+            imagem: "assets/images/poderdohabito.png",
           },
           {
             titulo: "It a Coisa",
             autor: "Stephen King",
             preco: 84.5,
             genero: "Terror",
-            imagem: "/assets/images/it.png",
+            imagem: "assets/images/it.png",
           },
           {
             titulo: "Sapiens: Uma Breve História da Humanidade",
             autor: "Yuval Noah Harari",
             preco: 54.9,
             genero: "História",
-            imagem: "/assets/images/sapiens.png",
+            imagem: "assets/images/sapiens.png",
           },
           {
             titulo: "Sniper Americano",
             autor: "Chris Kyle",
             preco: 49.0,
             genero: "Aventura",
-            imagem: "/assets/images/sniper.png",
+            imagem: "assets/images/sniper.png",
           },
         ];
 
@@ -251,9 +251,8 @@
           } while (livrosFiltrados.length === 0);
 
           const catalogo = document.getElementById("catalogo");
-          catalogo.innerHTML = ""; // Limpa o catálogo
+          catalogo.innerHTML = ""; 
 
-          // Exibe os livros recomendados
           livrosFiltrados.forEach((livro) => {
             const item = document.createElement("div");
             item.className = "item";
@@ -261,10 +260,10 @@
             catalogo.appendChild(item);
           });
 
-          catalogo.style.display = "block"; // Mostra a área do catálogo
+          catalogo.style.display = "block"; 
         }
 
-        getGenreAndRecommend(); // Chama a função ao carregar a página
+        getGenreAndRecommend(); 
       </script>
     </main>
   </body>
