@@ -1,0 +1,208 @@
+<!DOCTYPE html>  
+<html lang="pt-BR">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Mais Vendidos</title>  
+    
+    <link rel="icon" href="/assets/images/Bookshelf Icon.png" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>  
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #E3E6E6;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+        .header {
+          width: 100%;
+          height: 100px;
+          background-color: rgba(59, 65, 218, 0.9);
+          color: white;
+          padding: 10px;
+          text-align: center;
+  
+        }
+  
+        .header h1 {
+          margin-top: 20px;
+        }
+  
+        .header .links a {
+          color: white;
+          margin: 0 10px;
+          text-decoration: none;
+          margin-top: 20px;
+        }
+  
+        .header .links a:hover {
+          text-decoration: underline;
+        }
+        
+        
+        .titulo {
+            margin-top: 0;
+            font-size: 24px;
+        }
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+    </style> 
+</head>  
+<body>  
+  <header id="header" class="header">
+    <h1 onclick="window.location.href='index.html';">BookStore</h1>
+
+    <div class="links">
+      <a href="#" onclick="window.location.href='catalogo.html';">Catálogo</a>
+      <a href="#" onclick="window.location.href='maisvendidos.html';">Mais Vendidos</a>
+      <a href="#" onclick="window.location.href='recomendacao.html';">Recomendação</a>
+      <a href="#" onclick="window.location.href='sobrenos.html';">Sobre Nós</a>
+      <a href="#" onclick="window.location.href='contato.html';">Contato</a>
+    </div>
+  </header>
+
+    <main>  
+        <canvas id="grafico-coluna" width="800" height="300"></canvas>  
+    </main>   
+    <script>  
+        var ctx = document.getElementById("grafico-coluna").getContext("2d");  
+
+        var chartGraph = new Chart(ctx, {  
+            type: "bar", 
+            data: {  
+                labels: [  
+                    "Harry Potter", "Diario de um banana", "1808", "O Pequeno Príncipe",   
+                    "O Senhor dos Anéis", "Orgulho e Preconceito", "Dom Quixote","MARVEL",
+                ],  
+                datasets: [  
+                    {  
+                        label: "Vendas",  
+                        data: [30, 25, 6, 2, 15, 12, 8, 18],  
+                        backgroundColor: "#0734fbb7", 
+                        borderColor: "#0734fbb7", 
+                        borderWidth: 6,  
+                        fill: false, 
+                    },  
+                ],  
+            },  
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Mais Vendidos nos Últimos 6 Meses', 
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        },
+                        color: '#333' 
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top', 
+                        labels: {
+                            font: {
+                                size: 16, 
+                                weight: 'bold' 
+                            },
+                            color: '#000', 
+                        }
+                    },
+                    tooltip: {
+                        bodyFont: {
+                            size: 14
+                        },
+                        bodyColor: '#fff'
+                    },
+                }
+            }
+        });
+    </script>
+         
+    <br>
+        <h1 class="titulo">Gêneros mais Pedidos</h1>  
+
+    <main>  
+        <canvas id="grafico-pizza" width="800" height="300"></canvas>  
+    </main>  
+
+  
+    <script>
+        var ctx = document.getElementById("grafico-pizza").getContext("2d");
+    
+        var chartGraph = new Chart(ctx, {
+            type: "pie", 
+            data: {
+                labels: [
+                    "História", "Romance", "Terror"
+                ],
+                datasets: [{
+                    label: "Pedidos de Livros",
+                    data: [5, 10, 5],
+                    backgroundColor: [ 
+                        'rgba(255, 99, 132, 0.7)', 
+                        'rgba(54, 162, 235, 0.7)',  
+                        'rgba(255, 206, 86, 0.7)'   
+                    ],
+                    borderColor: [ 
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 3, 
+                    hoverOffset: 10 
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Distribuição de Pedidos de Livros por Gênero', 
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        },
+                        color: '#333' 
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top', 
+                        labels: {
+                            font: {
+                                size: 16, 
+                                weight: 'bold' 
+                            },
+                            color: '#000', 
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.7)', 
+                        bodyFont: {
+                            size: 14
+                        },
+                        bodyColor: '#fff'
+                    }
+                }
+            }
+        });
+    </script>
+    
+    
+</body>
+</h2>  
+</html>

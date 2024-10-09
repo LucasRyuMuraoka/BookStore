@@ -1,0 +1,16 @@
+{
+  "name": "bookshelf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chart.js": "^4.4.4",
+    "prompt-sync": "^4.2.0"
+  }
+}

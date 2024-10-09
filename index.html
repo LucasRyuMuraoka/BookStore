@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <link rel="icon" href="/assets/images/Bookshelf Icon.png" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+      body {
+        font-family: "Arial", sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        overflow: hidden;
+        background-color: #e3e6e6;
+        align-items: center;
+        text-align: center;
+      }
+
+      .header {
+        display: none;
+        width: 100%;
+        height: 100px;
+        background-color: rgba(59, 65, 218, 0.9);
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .header h1 {
+        margin-top: 20px;
+      }
+
+      .header .links a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        margin-top: 20px;
+      }
+
+      .header .links a:hover {
+        text-decoration: underline;
+      }
+
+      .welcome-message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: "Roboto Mono", monospace;
+        font-size: 48px;
+        font-weight: 600;
+        margin-top: 80px;
+        color: blue;
+      }
+
+      .home {
+        display: none;
+        padding: 10px;
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .titulohome {
+        font-size: 40px;
+      }
+
+      .current-date-time {
+        font-size: 20px;
+      }
+
+      .countdown-timer {
+        font-size: 20px;
+      }
+
+      .tituloproximo {
+        text-decoration: underline;
+      }
+
+      .autorlivro {
+        margin-top: -15px;
+      }
+
+      .countdown-section {
+        margin-top: 20px;
+      }
+
+      img {
+        width: 200px;
+        height: 300px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="welcome-message" class="welcome-message">
+      Bem-vindo ao BookStore!
+    </div>
+
+    <header id="header" class="header">
+      <h1 onclick="window.location.href='index.html';">BookStore</h1>
+
+      <div class="links">
+        <a href="#" onclick="window.location.href='catalogo.html';">Catálogo</a>
+        <a href="#" onclick="window.location.href='maisvendidos.html';"
+          >Mais Vendidos</a
+        >
+        <a href="#" onclick="window.location.href='recomendacao.html';"
+          >Recomendação</a
+        >
+        <a href="#" onclick="window.location.href='sobrenos.html';"
+          >Sobre Nós</a
+        >
+        <a href="#" onclick="window.location.href='contato.html';">Contato</a>
+      </div>
+    </header>
+
+    <!-- Página Home após o redirecionamento -->
+    <div id="home" class="home">
+      <h1 class="titulohome">Bem-vindo à Home!</h1>
+      <p id="current-date-time" class="current-date-time"></p>
+
+      <br /><br />
+
+      <!-- Seção de Contagem Regressiva -->
+      <div id="countdown-section" class="countdown-section">
+        <h1 class="tituloproximo">Próximo lançamento</h1>
+        <h2 class="titulolivro">Nunca Deixe de Tentar <br /></h2>
+        <h3 class="autorlivro">Livro por Michael Jordan</h3>
+        <img src="/assets/images/michael.png" alt="Livro de Michael Jordan" />
+        <p id="countdown-timer" class="countdown-timer"></p>
+      </div>
+    </div>
+
+    <script>
+      // Exibir a mensagem de boas-vindas por 3 segundos e redirecionar
+      setTimeout(function () {
+        document.getElementById("welcome-message").style.display = "none";
+        document.getElementById("home").style.display = "block";
+        document.getElementById("header").style.display = "block"; // Exibe o header após 3 segundos
+        showDateTime();
+        startCountdown(); // Iniciar contagem apenas após exibir a página
+      }, 3000);
+
+      // Função para mostrar a data e hora atual
+      function showDateTime() {
+        const now = new Date();
+        const formattedDateTime = now.toLocaleString("pt-BR", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        });
+        document.getElementById(
+          "current-date-time"
+        ).innerText = `Data e Hora atuais: ${formattedDateTime}`;
+      }
+
+      // Função para iniciar a contagem regressiva até o próximo lançamento
+      function startCountdown() {
+        const launchDate = new Date("2024-12-25T00:00:00"); // Defina a data do próximo lançamento
+        updateCountdown(launchDate);
+
+        setInterval(function () {
+          updateCountdown(launchDate);
+        }, 1000);
+      }
+
+      // Função que atualiza a contagem regressiva
+      function updateCountdown(launchDate) {
+        const now = new Date();
+        const timeDiff = launchDate - now;
+
+        if (timeDiff > 0) {
+          const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeDiff % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+          document.getElementById(
+            "countdown-timer"
+          ).innerText = `${days} dias, ${hours} horas, ${minutes} minutos, ${seconds} segundos restantes até o lançamento do livro.`;
+        } else {
+          document.getElementById("countdown-timer").innerText =
+            "A obra já foi lançada!";
+        }
+      }
+    </script>
+  </body>
+</html>
