@@ -1,3 +1,5 @@
 # BookStore
 Projeto de um site catálogo de uma livraria
-Lucas Ryu and José Daniel
+
+# Authors
+Lucas Ryu Muraoka and José Daniel da Silva de Queiroz
